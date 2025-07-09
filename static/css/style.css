@@ -1,0 +1,273 @@
+/* 🌐 Global Styling */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+}
+
+/* 📚 Sidebar - History */
+.history-panel {
+  width: 22%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.history-panel h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+#searchBox {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 15px;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+#historyList li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 🧠 Main Chat Area */
+.chat-container {
+  width: 78%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+/* 🎓 Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeInUp 1s ease;
+}
+
+.title {
+  font-family: 'Pacifico', cursive;
+  font-size: 36px;
+  color: #00ffcc;
+  margin: 0;
+  animation: bounceIn 1s ease-in-out;
+}
+
+.subtitle {
+  font-weight: 300;
+  margin-top: 10px;
+  color: #cccccc;
+  font-size: 18px;
+}
+
+/* 💬 Chat Bubbles */
+.chat-box {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  box-sizing: border-box;
+}
+
+.bubble {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.bubble.user {
+  background-color: rgba(0, 255, 204, 0.15);
+}
+
+.bubble.bot {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ✍️ Question Box */
+#question {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+/* 📢 Answer Text */
+#answer {
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🔘 Controls */
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.controls button,
+.controls select {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #00ffcc;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controls button:hover {
+  background: #00ccaa;
+}
+
+/* 📝 Feedback Card */
+.feedback-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.feedback-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+#feedback {
+  width: 100%;
+  resize: none;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.feedback-card button {
+  width: 100%;
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.feedback-card button:hover {
+  background: #e6b800;
+}
+
+/* 🤖 Bot Avatar Floating */
+#bot-avatar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 120px;
+  height: 120px;
+  z-index: 5;
+}
+
+/* ✨ Typing Animation */
+.typing::after {
+  content: ' ▌';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .history-panel {
+    width: 100%;
+    height: auto;
+    order: 2;
+  }
+
+  .chat-container {
+    width: 100%;
+    order: 1;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+}
